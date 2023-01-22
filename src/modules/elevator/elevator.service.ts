@@ -1,5 +1,4 @@
-import { Elevator } from './elevator.model';
-import { ElevatorStatus, IAddress, IElevator } from './elevator.types';
+import { ElevatorStatus, IAddress, IElevator, getAddressDataFromQuery, Elevator } from './index';
 
 export class ElevatorService {
     static async createElevator(data: IElevator): Promise<IElevator> {
@@ -13,10 +12,10 @@ export class ElevatorService {
         return elevators;
     }
 
-    static async getElevatorsByAddress(address: Partial<IAddress>): Promise<IElevator[]> {
-        const { state, city, street, houseNumber, houseNumberAddition, building, entrance } = address;
+    static async getElevatorsByAddress(query: Partial<IAddress>): Promise<IElevator[]> {
+        const address: Partial<IAddress> = getAddressDataFromQuery(query);
         const elevators = await Elevator.find({
-            address: { state, city, street, houseNumber, houseNumberAddition, building, entrance }
+            ...address
         });
         return elevators;
     }

@@ -18,7 +18,6 @@ const getElevators = async (req: Request, res: Response) => {
         let elevators: IElevator[] = [];
         const hasQuery = Object.keys(address).length > 0;
         if (hasQuery) {
-            console.log(address);
             elevators = await ElevatorService.getElevatorsByAddress(address);
         } else {
             elevators = await ElevatorService.getElevators();

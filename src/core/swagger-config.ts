@@ -3,7 +3,7 @@ import elevatorDoc from '../modules/elevator/swagger/swagger.docs';
 import Elevator from '../modules/elevator/swagger/elevator';
 import ElevatorStatus from '../modules/elevator/swagger/elevator-status';
 
-const options = {
+const swaggerOptions = {
     definition: {
         openapi: '3.0.0',
         info: {
@@ -36,7 +36,7 @@ const options = {
             }
         }
     },
-    apis: ['../src/modules/']
+    apis: ['./app.ts']
 };
 
-export default options;
+export default swaggerOptions;

@@ -15,7 +15,7 @@ Content-Type: application/json
     "street": "123 Main St",
     "city": "San Francisco",
     "state": "CA",
-    "houseNumber": 123
+    "houseNumber": "123"
   }
 }
 

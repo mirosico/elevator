@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import autoIncrement from 'mongoose-auto-increment';
-import { IElevator } from './elevator.types';
+import { IElevator } from './index';
 
 const { Schema } = mongoose;
 
@@ -28,17 +28,14 @@ const elevatorSchema = new Schema({
         },
         houseNumberAddition: {
             type: String,
-            default: null,
             required: false
         },
         building: {
             type: String,
-            default: null,
             required: false
         },
         entrance: {
             type: String,
-            default: null,
             required: false
         }
     },
