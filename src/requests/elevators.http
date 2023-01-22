@@ -1,0 +1,66 @@
+### Create a new elevator
+POST http://localhost:3000/elevators
+Content-Type: application/json
+
+{
+  "status": "active",
+  "floors": [
+    1,
+    2,
+    3
+  ],
+  "speed": 1,
+  "capacity": 10,
+  "address": {
+    "street": "123 Main St",
+    "city": "San Francisco",
+    "state": "CA",
+    "houseNumber": 123
+  }
+}
+
+### Get all elevators
+GET http://localhost:3000/elevators
+Content-Type: application/json
+
+### Get an elevator by id
+GET http://localhost:3000/elevators/1
+Content-Type: application/json
+
+### Update an elevator
+PUT http://localhost:3000/elevators/1
+Content-Type: application/json
+
+{
+  "status": "inactive",
+  "floors": [
+    1,
+    2,
+    3
+  ],
+  "speed": 1,
+  "capacity": 10,
+  "address": {
+    "street": "123 Main St",
+    "city": "San Francisco",
+    "state": "CA",
+    "houseNumber": 123
+  }
+}
+
+
+### Delete an elevator
+DELETE http://localhost:3000/elevators/1
+Content-Type: application/json
+
+### Get elevator status
+GET http://localhost:3000/elevators/1/status
+Content-Type: application/json
+
+### Set elevator status
+PUT http://localhost:3000/elevators/1/status
+Content-Type: application/json
+
+{
+  "status": "active"
+}
